@@ -20,18 +20,111 @@ void setup()
   Keyboard.press(KEY_ESC);
   Keyboard.releaseAll();
 
-  delay(200);
+  delay(300);
   Keyboard.print("notepad");
 
   typeKey(KEY_RETURN);
 
-  delay(200);
+  delay(500);
 
   typeKey(KEY_RETURN);
   typeKey(KEY_RETURN);
   typeKey(KEY_RETURN);
   typeKey(KEY_RETURN);
- Keyboard.print ("WB HACKING!!!!!");
+ 
+  Keyboard.print ("=================WB HACKING!!!!!=============");
+ 
+  typeKey(KEY_RETURN);
+  typeKey(KEY_RETURN);
+  typeKey(KEY_RETURN);
+  typeKey(KEY_RETURN);
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("                $$$$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("              $$    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("              $$    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("              $$    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("              $$    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("              $$    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("          $$$$$$    $$$$$$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("        $$    $$    $$    $$$$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("        $$    $$    $$    $$  $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("$$$$$$  $$    $$    $$    $$    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("$$    $$$$                $$    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("$$      $$                      $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("  $$    $$                      $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("   $$$  $$                      $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("    $$                          $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("     $$$                        $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("      $$                      $$$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("       $$$                    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("        $$                    $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("         $$$                $$$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("          $$                $$"));
+
+  typeKey(KEY_RETURN);
+
+  Keyboard.print(F("          $$$$$$$$$$$$$$$$$$$$"));
 
   typeKey(KEY_RETURN);
 
@@ -40,3 +133,4 @@ void setup()
 }
 
 void loop() {}
+
