@@ -1,0 +1,3 @@
+
+=> Executing hidden Powershell script
+PowerShell.exe -windowstyle hidden { your script.. }
