@@ -1,14 +1,10 @@
-byte seven_seg_digits[10][7] = { { 0,0,0,0,0,0,1 },  // = 0
-                                 { 1,0,0,1,1,1,1 },  // = 1
-                                 { 0,0,1,0,0,1,0 },  // = 2
-                                 { 0,0,0,0,1,1,0 },  // = 3
-                                 { 1,0,0,1,1,0,0 },  // = 4
-                                 { 0,1,0,0,1,0,0 },  // = 5
-                                 { 0,1,0,0,0,0,0 },  // = 6
-                                 { 0,0,0,1,1,1,1 },  // = 7
-                                 { 0,0,0,0,0,0,0 },  // = 8
-                                 { 0,0,0,1,1,0,0 }   // = 9
-                               };
+#define HOR_SUP 2
+#define VERT_SUP_DIR 3
+#define VERT_INF_DIR 4
+#define HOR_INF 5
+#define VERT_INF_ESQ 6
+#define VERT_SUP_ESQ 7
+#define HOR_MID 8
  
 void setup() {                
   pinMode(2, OUTPUT);   
@@ -19,26 +15,128 @@ void setup() {
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(9, OUTPUT);
-  writeDot(0);  // Inicia com o "ponto" (o signal de casas decimais led) desligado
-}
- 
-void writeDot(byte dot) {
-  digitalWrite(9, dot);
-}
- 
-void sevenSegWrite(byte digit) {
-  byte pin = 2;
-  for (byte segCount = 0; segCount < 7; ++segCount) {
-     digitalWrite(pin, seven_seg_digits[digit][segCount]);
-     ++pin;   
-   } 
+  
+  digitalWrite(2, LOW);
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  
 } 
  
 void loop() {   
-  for (byte count = 10; count > 0; --count) {
-    delay(1000);
-    sevenSegWrite(count - 1); 
-  }
- 
-  delay(4000);   // Aguarda 4 segundos para recomeçar a contar
+
+  digitalWrite(HOR_SUP, HIGH);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, HIGH);
+  digitalWrite(VERT_SUP_ESQ, HIGH);
+  digitalWrite(HOR_INF, HIGH);
+  digitalWrite(9, HIGH);
+
+delay (1000);
+
+//numero 1
+  digitalWrite(HOR_SUP, LOW);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, LOW);
+  digitalWrite(VERT_INF_ESQ, LOW);
+  digitalWrite(VERT_SUP_ESQ, LOW);
+  digitalWrite(HOR_INF, LOW);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 2
+  digitalWrite(HOR_SUP, HIGH);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, LOW);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, HIGH);
+  digitalWrite(VERT_SUP_ESQ, LOW);
+  digitalWrite(HOR_INF, HIGH);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 3
+  digitalWrite(HOR_SUP, HIGH);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, LOW);
+  digitalWrite(VERT_SUP_ESQ, LOW);
+  digitalWrite(HOR_INF, HIGH);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 4
+  digitalWrite(HOR_SUP, LOW);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, LOW);
+  digitalWrite(VERT_SUP_ESQ, HIGH);
+  digitalWrite(HOR_INF, LOW);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 5
+  digitalWrite(HOR_SUP, HIGH);
+  digitalWrite(VERT_SUP_DIR, LOW);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, LOW);
+  digitalWrite(VERT_SUP_ESQ, HIGH);
+  digitalWrite(HOR_INF, HIGH);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 6
+  digitalWrite(HOR_SUP, LOW);
+  digitalWrite(VERT_SUP_DIR, LOW);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, HIGH);
+  digitalWrite(VERT_SUP_ESQ, HIGH);
+  digitalWrite(HOR_INF, HIGH);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 7
+  digitalWrite(HOR_SUP, HIGH);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, LOW);
+  digitalWrite(VERT_INF_ESQ, LOW);
+  digitalWrite(VERT_SUP_ESQ, LOW);
+  digitalWrite(HOR_INF, LOW);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 8
+  digitalWrite(HOR_SUP, HIGH);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, HIGH);
+  digitalWrite(VERT_SUP_ESQ, HIGH);
+  digitalWrite(HOR_INF, HIGH);
+  digitalWrite(9, LOW);
+delay (1000);
+
+//numero 9
+  digitalWrite(HOR_SUP, HIGH);
+  digitalWrite(VERT_SUP_DIR, HIGH);
+  digitalWrite(VERT_INF_DIR, HIGH);
+  digitalWrite(HOR_MID, HIGH);
+  digitalWrite(VERT_INF_ESQ, LOW);
+  digitalWrite(VERT_SUP_ESQ, HIGH);
+  digitalWrite(HOR_INF, HIGH);
+  digitalWrite(9, LOW);
+delay (1000);
+
 }
